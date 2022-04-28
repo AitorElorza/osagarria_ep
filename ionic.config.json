@@ -1,0 +1,7 @@
+{
+  "name": "osagarria_ep",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
