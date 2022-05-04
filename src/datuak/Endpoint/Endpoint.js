@@ -4,7 +4,7 @@ class Endpoint{
     url;
     paramenters;
 
-    constructor(url, paramenters){
+    constructor(paramenters){
         this.url="https://api.esios.ree.es/indicators/";
         var today = Date.new();
         this.paramenters={
