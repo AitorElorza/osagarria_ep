@@ -1,7 +1,8 @@
 import { executeQuotaErrorCallbacks } from "workbox-core/_private";
 
 const axios =require("axios");
-//const fs =require('fs');
+//const cors=require('cors');
+
 
 export class datuakLortu{
     token;
@@ -17,7 +18,7 @@ export class datuakLortu{
             headers: {
                 "Accept": "application/json; application/vnd.esios-api-v1+json",
                 "Content-Type": "application/json",
-                "Authorization": 'Token token=""'
+                "Authorization": 'Token token="803a2f613ab9f8d2d70775cec0fc7a93bb08428df07561fde7a0af9d819b6103"'
             }
         }
 
@@ -29,10 +30,10 @@ export class datuakLortu{
             case 200: break;
             default: throw new Error(`${response.status} ${response.statusText}`);
         }
-        const data=JSON.stringify(response.data);
-        console.log(data);
-        //fs.writeFile('prezioak.json',data);
-        return data;
+        //const data=JSON.stringify(response.data,null,'\t');
+        //console.log(response.data.indicator.values);
+        console.log("success");
+        return response.data;
     }
 }
 
