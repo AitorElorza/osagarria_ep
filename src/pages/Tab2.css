@@ -1,11 +1,18 @@
 .sekzioTitulua{
-    margin-top: 0.75cm;
-    margin-left: 0.5cm;
+    text-align: center;
+    margin-bottom: 1cm;
+}
 
+.orria{
+    --ion-background-color: azure;
+}
+
+.titulua{
+    text-align: center;
 }
 
 .tresnak{
-    margin-left: 0.6cm;
+    text-align: center;
 }
 
 .IonSlides{
@@ -18,4 +25,9 @@
 
 .swiper-slide h2 {
     margin-top: 2.8rem;
+}
+
+.error{
+    font-size: small;
+    color: red;    
 }
