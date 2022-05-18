@@ -1,11 +1,11 @@
 import { executeQuotaErrorCallbacks } from "workbox-core/_private";
-
+//import{set_data} from "../datuak/datuakTratatu";
 const axios =require("axios");
 //const cors=require('cors');
 
 
 export class datuakLortu{
-    token;
+    
     endpointInstance;
 
     constructor(){
@@ -23,16 +23,17 @@ export class datuakLortu{
         }
 
         //call the api
-
+        
         const response = await axios.get(this.endpointInstance,config);
 
         switch(response.status){
             case 200: break;
             default: throw new Error(`${response.status} ${response.statusText}`);
         }
-        //const data=JSON.stringify(response.data,null,'\t');
-        //console.log(response.data.indicator.values);
-        console.log("success");
+        
+        
+        //console.log("success");
+        
         return response.data;
     }
 }

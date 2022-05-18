@@ -1,13 +1,27 @@
 import {datuakLortu} from "../datuak/datuakLortu";
 
 var getdata = new datuakLortu();
-var data =getdata.execute();
+var erantzuna =getdata.execute();
+var data;
+erantzuna.then(
+    (result)=>{
+        setData(result);
+        console.log(result);
+    },
+    (error)=>{console.log(error);}
 
-console.log(data);
+);
+
+//console.log(data);
 
 export function get_data(){
     return this.data;
 }
+
+function setData(datuak){
+    data = datuak;
+}
+
 
 
 export function average(){
