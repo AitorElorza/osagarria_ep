@@ -1,4 +1,4 @@
-import { IonButton, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonSlide, IonSlides, IonTitle, IonToolbar, } from '@ionic/react';
+import { IonButton, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonSlide, IonSlides, IonTabButton, IonTitle, IonToolbar, } from '@ionic/react';
 import { useForm } from "react-hook-form";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from 'react-router-dom';
@@ -8,15 +8,48 @@ const Tab2: React.FC = () => {
   const { register, formState: {errors},  handleSubmit } = useForm();
   const onSubmit = (data: any) => {
     console.log(data);
+    
     //window.location.href = 'Tab1';
-    console.log(data.AireGirotua_Orduak);
-    <Link to={{pathname:'sss', state: data}} />
-    console.log('aaa')
-    //window.alert(<a href="Tab1">link text</a>)
+    
+    //console.log(data.AireGirotua_Orduak);
+
+    //<Link to={{pathname:'Tab1', state: data}} />
+
+    //console.log('aaa');
+
+    //window.alert(<a href="Tab3">link text</a>)
+
+    localStorage.setItem('Bizilekua', data.Bizilekua);
+    localStorage.setItem('Elektriziztate_Konpainia', data.Elektriziztate_Konpainia);
+    localStorage.setItem('PotentziaKontratatua', data.PotentziaKontratatua);
+    localStorage.setItem('Hozkailu_Potentzia', data.Hozkailu_Potentzia);
+    localStorage.setItem('Hozkailu_Orduak', data.Hozkailu_Orduak);
+    localStorage.setItem('Izozkailu_Potentzia', data.Izozkailu_Potentzia);
+    localStorage.setItem('Izozkailu_Orduak', data.Izozkailu_Orduak);
+    localStorage.setItem('Router_Potentzia', data.Router_Potentzia);
+    localStorage.setItem('Router_Orduak', data.Router_Orduak);
+    localStorage.setItem('Argiztatzea_Potentzia', data.Argiztatzea_Potentzia);
+    localStorage.setItem('Argiztatzea_Orduak', data.Argiztatzea_Orduak);
+    localStorage.setItem('Labea_Potentzia', data.Labea_Potentzia);
+    localStorage.setItem('Labea_Orduak', data.Labea_Orduak);
+    localStorage.setItem('Garbigailua_Potentzia', data.Garbigailua_Potentzia);
+    localStorage.setItem('Garbigailua_Orduak', data.Garbigailua_Orduak);
+    localStorage.setItem('PlaterIkuzgailua_Potentzia', data.PlaterIkuzgailua_Potentzia);
+    localStorage.setItem('PlaterIkuzgailua_Orduak', data.PlaterIkuzgailua_Orduak);
+    localStorage.setItem('AireGirotua_Potentzia', data.AireGirotua_Potentzia);
+    localStorage.setItem('AireGirotua_Orduak', data.AireGirotua_Orduak);
+    localStorage.setItem('Ordenagailua_Potentzia', data.Ordenagailua_Potentzia);
+    localStorage.setItem('dOrdenagailua_Orduakata', data.Ordenagailua_Orduak);
+    localStorage.setItem('Berogailua_Potentzia', data.Berogailua_Potentzia);
+    localStorage.setItem('Berogailua_Orduak', data.Berogailua_Orduak);
+    localStorage.setItem('Mugikor_kopurua', data.Mugikor_kopurua);
+
     if (window.confirm('Ok klikatu zure kontsumoaren analisia ikusteko')) 
     {
-    window.location.href='Tab1';
+    window.location.href='Tab3';
     };
+
+    //<Link to={{ pathname: 'Tab1', state: { message: 'hello, im a passed message!' } }}/>
   }
     
 
@@ -142,7 +175,7 @@ const Tab2: React.FC = () => {
                 <IonCol col-3>
                   <IonItem>
                     <IonLabel>Potentzia:</IonLabel>
-                    <IonInput {...register("Ruter_Potentzia", { required: true, pattern:/^[1-9][0-9]*$/ })}/>
+                    <IonInput {...register("Router_Potentzia", { required: true, pattern:/^[1-9][0-9]*$/ })}/>
                   </IonItem>
                 </IonCol>
                 <IonCol col-9>

@@ -1,10 +1,14 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonItem, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import './Tab3.css';
+import './Tab2.css';
+
+//var data = localStorage.getItem('Bizilekua')
+
+//localStorage.removeItem('Bizilekua');
 
 const Tab3: React.FC = () => {
   return (
-    <IonPage>
+    <IonPage className='orria'>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Tab 3</IonTitle>
@@ -16,10 +20,20 @@ const Tab3: React.FC = () => {
             <IonTitle size="large">Tab 3</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 3 page" />
+
+        
+        <p>Kontratatutako potentziarengatik ordaindutakoa:</p>
+        <p>{localStorage.getItem('PotentziaKontratatua')} * 0.1233 €/kW eguneko :</p>
+
+        <p>{localStorage.getItem('Bizilekua')}</p>
+        <p>{localStorage.getItem('Elektriziztate_Konpainia')}</p>
+
+
       </IonContent>
+
     </IonPage>
   );
 };
+
 
 export default Tab3;
