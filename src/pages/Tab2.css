@@ -4,7 +4,7 @@
 }
 
 .orria{
-    --ion-background-color: azure;
+    --ion-background-color: rgb(250, 255, 255);
 }
 
 .titulua{
@@ -30,4 +30,9 @@
 .error{
     font-size: small;
     color: red;    
+}
+
+.ar{
+    margin-top: 10%;
+    margin-left: 85%;
 }

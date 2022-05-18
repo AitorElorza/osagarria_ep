@@ -1,12 +1,24 @@
-import { IonButton, IonCheckbox, IonCol, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonSlide, IonSlides, IonTitle, IonToolbar, } from '@ionic/react';
+import { IonButton, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonSlide, IonSlides, IonTitle, IonToolbar, } from '@ionic/react';
 import { useForm } from "react-hook-form";
+import { BsArrowRight } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 import './Tab2.css';
 
 const Tab2: React.FC = () => {
-
   const { register, formState: {errors},  handleSubmit } = useForm();
-  const onSubmit = (data: any) => console.log(data);
-
+  const onSubmit = (data: any) => {
+    console.log(data);
+    //window.location.href = 'Tab1';
+    console.log(data.AireGirotua_Orduak);
+    <Link to={{pathname:'sss', state: data}} />
+    console.log('aaa')
+    //window.alert(<a href="Tab1">link text</a>)
+    if (window.confirm('Ok klikatu zure kontsumoaren analisia ikusteko')) 
+    {
+    window.location.href='Tab1';
+    };
+  }
+    
 
   return (
     <IonPage className='orria'>
@@ -56,6 +68,11 @@ const Tab2: React.FC = () => {
                 {errors.PotentziaKontratatua?.type === 'pattern' && <p className='error'> <br/>Zenbaki positibo eta osoa izan behar da</p>}
                 <IonInput {...register("PotentziaKontratatua", { required: true, pattern:/^[1-9][0-9]*$/ })}/>
               </IonItem>                
+
+              <IonRow className='ar'>
+                <p className='arrowT'>Slide</p>
+                <BsArrowRight size={50}></BsArrowRight>
+              </IonRow>
 
             </IonSlide>
 
@@ -134,6 +151,11 @@ const Tab2: React.FC = () => {
                     <IonInput {...register("Router_Orduak", { required: true, pattern:/^[1-9][0-9]*$/ })}/>
                   </IonItem>
                 </IonCol>
+              </IonRow>
+
+              <IonRow className='ar'>
+                <p className='arrowT'>Slide</p>
+                <BsArrowRight size={50}></BsArrowRight>
               </IonRow>
 
             </IonSlide>
@@ -326,7 +348,8 @@ const Tab2: React.FC = () => {
                 <IonLabel>Terminoak irakurri eta onartzen ditut</IonLabel>
                 <IonCheckbox slot="start" />
               </IonItem>
-              <IonButton className="ion-margin-top" href="../pages/Tab1" type="submit" expand="block">
+
+              <IonButton className="ion-margin-top" type="submit" expand="block">
                 Kalkulatu
               </IonButton>
 
