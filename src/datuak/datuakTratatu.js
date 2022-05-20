@@ -58,22 +58,19 @@ export function set_udata(data){
 
 
 
-export function average(){
-   /* var avg=0;
-    var sum=0;
-    for(var i=0; i<data.indicator.values.length; i++){
-        if(data.indicator.values[i].geo_id=="Peninsula"){
-            avg=avg+data.indicator.values[i].value;
-            sum=sum+1;
-        };
+function average(geo){
+    var data= window.pdata.indicator.values;
+    var avg=0;
+    
+    for(var i=0;i<data.length;i++){
+        if(data[i].geo_id==geo){
+            avg =avg + data[i].value;
+        }
     }
-    var average=avg/sum;
-    console.log(average);
-    return average;*/
-    return null;
+    return avg/24;
     
 }
 
 
 
-export {min_price_h, get_pdata, user_avg};
+export {min_price_h, get_pdata, user_avg,average};

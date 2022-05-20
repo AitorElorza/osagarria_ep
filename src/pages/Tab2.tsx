@@ -8,7 +8,7 @@ import { min_price_h,user_avg } from '../datuak/datuakTratatu';
 const Tab2: React.FC = () => {
   const { register, formState: {errors},  handleSubmit } = useForm();
   const onSubmit = (data: any) => {
-    console.log(data);
+    //console.log(data);
     
     //window.location.href = 'Tab1';
     
