@@ -25,10 +25,11 @@ const Tab3: React.FC = () => {
         <p>Kontratatutako potentziarengatik ordaindutakoa:</p>
         <p>{localStorage.getItem('PotentziaKontratatua')} * 0.1233 €/kW eguneko :</p>
 
-        <p>{localStorage.getItem('Bizilekua')}</p>
-        <p>{localStorage.getItem('Elektriziztate_Konpainia')}</p>
-
-
+        <p>Bizilekuaren Geoi_id:{localStorage.getItem('Bizilekua')}</p>
+        <p>Zure konpainia:{localStorage.getItem('Elektriziztate_Konpainia')}</p>
+        <p>Prezio merkeena duen ordua:{localStorage.getItem('Prezio_merkeeneko_ordua')}</p>
+        <p>24h konektatutako makinen gastua:{localStorage.getItem('Vatioak_24h')}</p>
+        
       </IonContent>
 
     </IonPage>
