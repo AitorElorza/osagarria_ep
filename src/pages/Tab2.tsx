@@ -28,11 +28,11 @@ const Tab2: React.FC = () => {
     localStorage.setItem('Elektriziztate_Konpainia', data.Elektriziztate_Konpainia);
     localStorage.setItem('PotentziaKontratatua', data.PotentziaKontratatua);
     localStorage.setItem('Hozkailu_Potentzia', data.Hozkailu_Potentzia);
-    localStorage.setItem('Hozkailu_Orduak', data.Hozkailu_Orduak);
+    //localStorage.setItem('Hozkailu_Orduak', data.Hozkailu_Orduak);
     localStorage.setItem('Izozkailu_Potentzia', data.Izozkailu_Potentzia);
-    localStorage.setItem('Izozkailu_Orduak', data.Izozkailu_Orduak);
+    //localStorage.setItem('Izozkailu_Orduak', data.Izozkailu_Orduak);
     localStorage.setItem('Router_Potentzia', data.Router_Potentzia);
-    localStorage.setItem('Router_Orduak', data.Router_Orduak);
+    //localStorage.setItem('Router_Orduak', data.Router_Orduak);
     localStorage.setItem('Argiztatzea_Potentzia', data.Argiztatzea_Potentzia);
     localStorage.setItem('Argiztatzea_Orduak', data.Argiztatzea_Orduak);
     localStorage.setItem('Labea_Potentzia', data.Labea_Potentzia);
@@ -134,61 +134,46 @@ const Tab2: React.FC = () => {
               <h3 className="tresnak">
                 Hozkailua
               </h3>
-              {(errors.Hozkailu_Potentzia?.type === 'required' || errors.Hozkailu_Orduak?.type === 'required') && <p className='error'>Beharrezko eremua</p>}
-              {(errors.Hozkailu_Potentzia?.type === 'pattern' || errors.Hozkailu_Orduak?.type === 'pattern') && <p className='error'>Zenbaki positibo eta osoa izan behar da</p>}
+              {(errors.Hozkailu_Potentzia?.type === 'required' ) && <p className='error'>Beharrezko eremua</p>}
+              {(errors.Hozkailu_Potentzia?.type === 'pattern' ) && <p className='error'>Zenbaki positibo eta osoa izan behar da</p>}
               <IonRow>
-                <IonCol col-3>
+                <IonCol>
                   <IonItem>
                     <IonLabel>Potentzia:</IonLabel>
                     <IonInput {...register("Hozkailu_Potentzia", { required: true, pattern:/^[1-9][0-9]*$/ })}/>
                   </IonItem>
                 </IonCol>
-                <IonCol col-9>
-                  <IonItem class="padding-left-2px">
-                    <IonLabel>Orduak:</IonLabel>
-                    <IonInput {...register("Hozkailu_Orduak", { required: true, pattern:/^[1-9][0-9]*$/ })}/>
-                  </IonItem>
-                </IonCol>
+                
               </IonRow>
 
               <h3 className="tresnak">
                 Izozkailua
               </h3>
-              {(errors.Izozkailu_Potentzia?.type === 'required' || errors.Izozkailu_Orduak?.type === 'required') && <p className='error'>Beharrezko eremua</p>}
-              {(errors.Izozkailu_Potentzia?.type === 'pattern' || errors.Izozkailu_Orduak?.type === 'pattern') && <p className='error'>Zenbaki positibo eta osoa izan behar da</p>}
+              {(errors.Izozkailu_Potentzia?.type === 'required' ) && <p className='error'>Beharrezko eremua</p>}
+              {(errors.Izozkailu_Potentzia?.type === 'pattern' ) && <p className='error'>Zenbaki positibo eta osoa izan behar da</p>}
               <IonRow>
-                <IonCol col-3>
+                <IonCol >
                   <IonItem>
                     <IonLabel>Potentzia:</IonLabel>
                     <IonInput {...register("Izozkailu_Potentzia", { required: true, pattern:/^[1-9][0-9]*$/ })}/>
                   </IonItem>
                 </IonCol>
-                <IonCol col-9>
-                  <IonItem class="padding-left-2px">
-                    <IonLabel>Orduak:</IonLabel>
-                    <IonInput {...register("Izozkailu_Orduak", { required: true, pattern:/^[1-9][0-9]*$/ })}/>
-                  </IonItem>
-                </IonCol>
+                
               </IonRow>
 
               <h3 className="tresnak">
                 Router
               </h3>
-              {(errors.Ruter_Potentzia?.type === 'required' || errors.Router_Orduak?.type === 'required') && <p className='error'>Beharrezko eremua</p>}
-              {(errors.Ruter_Potentzia?.type === 'pattern' || errors.Router_Orduak?.type === 'pattern') && <p className='error'>Zenbaki positibo eta osoa izan behar da</p>}
+              {(errors.Ruter_Potentzia?.type === 'required' ) && <p className='error'>Beharrezko eremua</p>}
+              {(errors.Ruter_Potentzia?.type === 'pattern' ) && <p className='error'>Zenbaki positibo eta osoa izan behar da</p>}
               <IonRow>
-                <IonCol col-3>
+                <IonCol >
                   <IonItem>
                     <IonLabel>Potentzia:</IonLabel>
                     <IonInput {...register("Router_Potentzia", { required: true, pattern:/^[1-9][0-9]*$/ })}/>
                   </IonItem>
                 </IonCol>
-                <IonCol col-9>
-                  <IonItem class="padding-left-2px">
-                    <IonLabel>Orduak:</IonLabel>
-                    <IonInput {...register("Router_Orduak", { required: true, pattern:/^[1-9][0-9]*$/ })}/>
-                  </IonItem>
-                </IonCol>
+                
               </IonRow>
 
               <IonRow className='ar'>
