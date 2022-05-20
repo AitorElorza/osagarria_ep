@@ -11,20 +11,17 @@ const Tab3: React.FC = () => {
     <IonPage className='orria'>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 3</IonTitle>
+          <IonTitle>Datuen analisia</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 3</IonTitle>
+            <IonTitle size="large">Datuen analisia</IonTitle>
           </IonToolbar>
         </IonHeader>
 
         
-        <p>Kontratatutako potentziarengatik ordaindutakoa:</p>
-        <p>{localStorage.getItem('PotentziaKontratatua')} * 0.1233 €/kW eguneko :</p>
-
         <p>Bizilekuaren Geoi_id:{localStorage.getItem('Bizilekua')}</p>
         <p>Zure konpainia:{localStorage.getItem('Elektriziztate_Konpainia')}</p>
         <p>Prezio merkeena duen ordua:{localStorage.getItem('Prezio_merkeeneko_ordua')}</p>
