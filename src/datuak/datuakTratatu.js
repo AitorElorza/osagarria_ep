@@ -17,24 +17,23 @@ function get_pdata(){
     return window.pdata;
 }
 
-export function min_price_h(geo){
-    var data=window.pdata.indicator.values;
-    var minp="";//price minimun
+function min_price_h(geo){
+    var data= window.pdata.indicator.values;
+    var minp=9999;//price minimun
     var mint="";//time when price is minimun
     var lag;//help with time transformation split string
-    var lag2; //help with time transformation to time
+    
     for(var i=0;i<data.length;i++){
         if(data[i].geo_id==geo){
-            lag = data[i].value;
-            if(minp="" || minp>lag){
+            lag = data[i].value;           
+            if(minp>lag){
                 minp=lag;
-                mint=data[i].date.split("T")[1].split("+")[0];
+                mint=data[i].datetime.split("T")[1].split("+")[0].split(".")[0];
             }
         }
     }
 
     return mint;
-
 }
 
 export function set_udata(data){
@@ -64,3 +63,4 @@ export function average(){
 
 
 
+export {min_price_h, get_pdata};

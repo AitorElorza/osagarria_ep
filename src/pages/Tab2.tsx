@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import './Tab2.css';
+import { min_price_h } from '../datuak/datuakTratatu';
 
 const Tab2: React.FC = () => {
   const { register, formState: {errors},  handleSubmit } = useForm();
@@ -18,6 +19,7 @@ const Tab2: React.FC = () => {
     //console.log('aaa');
 
     //window.alert(<a href="Tab3">link text</a>)
+    console.log(min_price_h(parseInt(data.Bizilekua)));
 
     localStorage.setItem('Bizilekua', data.Bizilekua);
     localStorage.setItem('Elektriziztate_Konpainia', data.Elektriziztate_Konpainia);
