@@ -1,5 +1,4 @@
-import {datuakLortu} from "../datuak/datuakLortu";
-
+/*
 var getdata = new datuakLortu();
 var erantzuna =getdata.execute();
 var data;
@@ -10,17 +9,40 @@ erantzuna.then(
     },
     (error)=>{console.log(error);}
 
-);
+);*/
 
 //console.log(data);
 
-export function get_data(){
-    return this.data;
+function get_pdata(){
+    return window.pdata;
 }
 
-function setData(datuak){
-    data = datuak;
+export function min_price_h(geo){
+    var data=window.pdata.indicator.values;
+    var minp="";//price minimun
+    var mint="";//time when price is minimun
+    var lag;//help with time transformation split string
+    var lag2; //help with time transformation to time
+    for(var i=0;i<data.length;i++){
+        if(data[i].geo_id==geo){
+            lag = data[i].value;
+            if(minp="" || minp>lag){
+                minp=lag;
+                mint=data[i].date.split("T")[1].split("+")[0];
+            }
+        }
+    }
+
+    return mint;
+
 }
+
+export function set_udata(data){
+    console.log(data);
+    window.udata=data;
+    return true;
+}
+
 
 
 

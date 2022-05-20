@@ -34,6 +34,11 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+//start getting today data
+import {datuakLortu} from "./datuak/datuakLortu";
+var dlortu= new datuakLortu();
+dlortu.execute();
+
 setupIonicReact();
 
 const App: React.FC = () => (

@@ -4,6 +4,7 @@ const axios =require("axios");
 //const cors=require('cors');
 
 
+
 export class datuakLortu{
     
     endpointInstance;
@@ -31,7 +32,9 @@ export class datuakLortu{
             default: throw new Error(`${response.status} ${response.statusText}`);
         }
         
-        
+        //save data in a global variable
+        window.pdata=response.data;
+    
         //console.log("success");
         
         return response.data;
