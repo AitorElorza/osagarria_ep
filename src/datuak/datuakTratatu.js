@@ -36,6 +36,19 @@ function min_price_h(geo){
     return mint;
 }
 
+function user_avg(geo,hozk,izozk,router){
+    var data= window.pdata.indicator.values;
+    var avg=0;
+    
+    for(var i=0;i<data.length;i++){
+        if(data[i].geo_id==geo){
+            avg =avg + data[i].value*(hozk+izozk+router);
+        }
+    }
+    return avg;
+}
+
+
 export function set_udata(data){
     console.log(data);
     window.udata=data;
@@ -63,4 +76,4 @@ export function average(){
 
 
 
-export {min_price_h, get_pdata};
+export {min_price_h, get_pdata, user_avg};
