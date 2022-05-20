@@ -96,7 +96,7 @@ const Tab2: React.FC = () => {
               </IonItem>
               
               <IonItem>
-                <IonLabel position="floating">Potentzia kontratatua (kW)</IonLabel>
+                <IonLabel position="floating">Potentzia kontratatua (W)</IonLabel>
                 {errors.PotentziaKontratatua?.type === 'required' && <p className='error'> <br/>Beharrezko eremua</p>}
                 {errors.PotentziaKontratatua?.type === 'pattern' && <p className='error'> <br/>Zenbaki positibo eta osoa izan behar da</p>}
                 <IonInput {...register("PotentziaKontratatua", { required: true, pattern:/^[1-9][0-9]*$/ })}/>
