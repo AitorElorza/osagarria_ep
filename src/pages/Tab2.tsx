@@ -77,8 +77,8 @@ const Tab2: React.FC = () => {
                 <IonLabel position='floating'>Bizilekua</IonLabel>
                 {errors.Bizilekua?.type === 'required' && <p className='error'> <br/>Beharrezko eremua</p>}
                 <IonSelect multiple={false} cancelText="Ezeztatu" okText="Gorde" {...register("Bizilekua", { required: true})}>
-                  <IonSelectOption value="PBK">Penintsula, Balearrak eta Kanarias</IonSelectOption>
-                  <IonSelectOption value="CM">Ceuta eta Melilla</IonSelectOption>
+                  <IonSelectOption value= "8741" >Penintsula, Balearrak eta Kanarias</IonSelectOption>
+                  <IonSelectOption value="8742">Ceuta eta Melilla</IonSelectOption>
                 </IonSelect>
               </IonItem>
 
